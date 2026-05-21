@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro — Connexion Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="login-page">
+  <div class="login-card">
+    <div class="login-logo">Edu<span>Pro</span></div>
+    <div class="login-subtitle">Espace d'administration sécurisé</div>
+
+    <div class="login-error" id="login-error">
+      ❌ Identifiants incorrects. Réessayez.
+    </div>
+
+    <form id="login-form" novalidate>
+      <div class="form-group">
+        <label for="username">Identifiant</label>
+        <input type="text" id="username" placeholder="admin" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+        <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.82rem;color:rgba(255,255,255,0.4);cursor:pointer">
+          <input type="checkbox" style="accent-color:var(--orange);width:auto"> Se souvenir de moi
+        </label>
+        <a href="#" style="font-size:0.82rem;color:var(--orange-light);text-decoration:none">Mot de passe oublié ?</a>
+      </div>
+
+      <button type="submit" class="btn-submit" id="login-btn">
+        Se connecter →
+      </button>
+    </form>
+
+    <div style="text-align:center;margin-top:2rem">
+      <a href="index.html" style="font-size:0.82rem;color:rgba(255,255,255,0.3);text-decoration:none;transition:color 0.2s" onmouseover="this.style.color='var(--orange-light)'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">
+        ← Retour au site
+      </a>
+    </div>
+
+    <div style="margin-top:2rem;padding:1rem;background:rgba(217,98,43,0.1);border-radius:12px;border:1px solid rgba(217,98,43,0.2)">
+      <div style="font-size:0.75rem;color:rgba(255,255,255,0.4);margin-bottom:0.3rem">Compte de démonstration :</div>
+      <div style="font-size:0.82rem;color:var(--orange-light)">Login : <strong>admin</strong> &nbsp;|&nbsp; Mot de passe : <strong>edupro2026</strong></div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('login-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+  const btn = document.getElementById('login-btn');
+  const err = document.getElementById('login-error');
+
+  btn.disabled = true;
+  btn.textContent = 'Connexion en cours...';
+  err.classList.remove('show');
+
+  setTimeout(() => {
+    if (username === 'admin' && password === 'edupro2026') {
+      sessionStorage.setItem('edupro_admin', 'true');
+      window.location.href = 'admin-dashboard.html';
+    } else {
+      err.classList.add('show');
+      btn.disabled = false;
+      btn.textContent = 'Se connecter →';
+      document.getElementById('password').value = '';
+    }
+  }, 900);
+});
+</script>
+</body>
+</html>

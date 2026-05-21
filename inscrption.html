@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro — Inscription</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Edu<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#formations">Formations</a></li>
+    <li><a href="index.html#categories">Catégories</a></li>
+    <li><a href="index.html#temoignages">Témoignages</a></li>
+    <li><a href="admin-login.html">Admin</a></li>
+  </ul>
+  <a href="index.html" class="nav-cta" style="background:var(--dark)">← Retour</a>
+</nav>
+
+<!-- INSCRIPTION PAGE -->
+<div class="inscription-page">
+  <!-- Left info -->
+  <div class="inscription-info">
+    <a href="index.html" class="back-link">← Retour aux formations</a>
+    <h1>Inscrivez-vous<br>à votre <em>formation</em></h1>
+    <p>Remplissez le formulaire pour réserver votre place. Vous recevrez une confirmation par e-mail avec tous les détails d'accès.</p>
+
+    <div class="formation-mini-card" id="formation-mini">
+      <div class="fmc-emoji" id="fmc-emoji">🤖</div>
+      <div>
+        <div class="fmc-title" id="fmc-title">Intelligence Artificielle : machine learning & deep learning</div>
+        <div class="fmc-price" id="fmc-price">299 DT / formation</div>
+      </div>
+    </div>
+
+    <div style="margin-top:3rem;">
+      <p class="section-label" style="margin-bottom:1rem">Pourquoi nous choisir ?</p>
+      <div style="display:flex;flex-direction:column;gap:1rem;">
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:1.5rem;background:rgba(217,98,43,0.12);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center">🏆</span>
+          <div>
+            <div style="font-weight:600;color:var(--dark);font-size:0.92rem">Certificat professionnel</div>
+            <div style="font-size:0.82rem;color:var(--text-muted)">Reconnu par les entreprises tunisiennes</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:1.5rem;background:rgba(39,174,96,0.12);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center">✅</span>
+          <div>
+            <div style="font-weight:600;color:var(--dark);font-size:0.92rem">Remboursement sous 14 jours</div>
+            <div style="font-size:0.82rem;color:var(--text-muted)">Satisfait ou remboursé, sans questions</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem">
+          <span style="font-size:1.5rem;background:rgba(59,94,166,0.12);width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center">🎓</span>
+          <div>
+            <div style="font-weight:600;color:var(--dark);font-size:0.92rem">Accès illimité à vie</div>
+            <div style="font-size:0.82rem;color:var(--text-muted)">Revenez apprendre à votre rythme</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Form card -->
+  <div class="form-card">
+    <div class="form-title">Créer votre compte</div>
+    <div class="form-subtitle">Inscription en moins de 2 minutes · Accès immédiat</div>
+
+    <form id="inscription-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nom">Nom *</label>
+          <input type="text" id="nom" placeholder="Ben Hamda" required>
+          <div class="error-msg">Le nom est requis</div>
+        </div>
+        <div class="form-group">
+          <label for="prenom">Prénom *</label>
+          <input type="text" id="prenom" placeholder="Ahmed" required>
+          <div class="error-msg">Le prénom est requis</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Adresse e-mail *</label>
+        <input type="email" id="email" placeholder="ahmed@example.com" required>
+        <div class="error-msg">Entrez un e-mail valide</div>
+      </div>
+
+      <div class="form-group">
+        <label for="tel">Téléphone</label>
+        <input type="tel" id="tel" placeholder="+216 XX XXX XXX">
+      </div>
+
+      <div class="form-group">
+        <label for="formation">Formation choisie *</label>
+        <select id="formation" required>
+          <option value="">-- Sélectionner une formation --</option>
+          <option value="1">Intelligence Artificielle — 299 DT</option>
+          <option value="2">Data Science avec Python — 249 DT</option>
+          <option value="3">Développement Web Full Stack — 199 DT</option>
+          <option value="4">Cybersécurité & Ethical Hacking — 349 DT</option>
+          <option value="5">DevOps & Cloud — 279 DT</option>
+          <option value="6">Design UI/UX — 179 DT</option>
+        </select>
+        <div class="error-msg">Veuillez choisir une formation</div>
+      </div>
+
+      <div class="form-group">
+        <label for="niveau">Votre niveau actuel</label>
+        <select id="niveau">
+          <option value="">-- Votre niveau --</option>
+          <option value="debutant">Débutant — pas d'expérience</option>
+          <option value="intermediaire">Intermédiaire — quelques bases</option>
+          <option value="avance">Avancé — expérience professionnelle</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Message (optionnel)</label>
+        <textarea id="message" rows="3" placeholder="Vos questions ou attentes particulières..."></textarea>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:1rem">
+        <input type="checkbox" id="cgu" style="width:auto;accent-color:var(--orange)">
+        <label for="cgu" style="font-size:0.82rem;color:var(--text-muted);cursor:pointer">
+          J'accepte les <a href="#" style="color:var(--orange)">conditions d'utilisation</a> et la politique de confidentialité *
+        </label>
+      </div>
+      <div id="cgu-error" style="font-size:0.75rem;color:#E74C3C;margin-bottom:0.75rem;display:none">Vous devez accepter les conditions</div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">
+        Confirmer mon inscription →
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="success-overlay">
+  <div class="success-box">
+    <div class="success-icon">🎉</div>
+    <h2>Inscription confirmée !</h2>
+    <p>Félicitations ! Votre inscription a bien été enregistrée. Un e-mail de confirmation vous sera envoyé dans quelques minutes avec vos identifiants d'accès.</p>
+    <a href="index.html" class="btn-success">Retour à l'accueil</a>
+  </div>
+</div>
+
+<script>
+// Pre-fill formation from URL param
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+if (id) {
+  const sel = document.getElementById('formation');
+  if (sel.querySelector(`option[value="${id}"]`)) sel.value = id;
+}
+
+// Formation mini card data
+const formations = {
+  '1': { emoji: '🤖', title: 'Intelligence Artificielle', price: '299 DT' },
+  '2': { emoji: '📊', title: 'Data Science avec Python', price: '249 DT' },
+  '3': { emoji: '💻', title: 'Développement Web Full Stack', price: '199 DT' },
+  '4': { emoji: '🔐', title: 'Cybersécurité & Ethical Hacking', price: '349 DT' },
+  '5': { emoji: '☁️', title: 'DevOps & Cloud', price: '279 DT' },
+  '6': { emoji: '🎨', title: 'Design UI/UX avec Figma', price: '179 DT' },
+};
+
+function updateMiniCard(val) {
+  if (formations[val]) {
+    const f = formations[val];
+    document.getElementById('fmc-emoji').textContent = f.emoji;
+    document.getElementById('fmc-title').textContent = f.title;
+    document.getElementById('fmc-price').textContent = f.price + ' / formation';
+  }
+}
+if (id && formations[id]) updateMiniCard(id);
+document.getElementById('formation').addEventListener('change', e => updateMiniCard(e.target.value));
+
+// Form validation
+document.getElementById('inscription-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  // Validate required text inputs
+  ['nom', 'prenom'].forEach(field => {
+    const input = document.getElementById(field);
+    if (!input.value.trim()) {
+      input.classList.add('error');
+      valid = false;
+    } else {
+      input.classList.remove('error');
+    }
+  });
+
+  // Email validation
+  const email = document.getElementById('email');
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email.value)) {
+    email.classList.add('error');
+    valid = false;
+  } else {
+    email.classList.remove('error');
+  }
+
+  // Formation select
+  const formation = document.getElementById('formation');
+  if (!formation.value) {
+    formation.classList.add('error');
+    formation.nextElementSibling.style.display = 'block';
+    valid = false;
+  } else {
+    formation.classList.remove('error');
+    formation.nextElementSibling.style.display = 'none';
+  }
+
+  // CGU checkbox
+  const cgu = document.getElementById('cgu');
+  if (!cgu.checked) {
+    document.getElementById('cgu-error').style.display = 'block';
+    valid = false;
+  } else {
+    document.getElementById('cgu-error').style.display = 'none';
+  }
+
+  if (!valid) return;
+
+  // Submit
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Traitement en cours...';
+
+  setTimeout(() => {
+    // Save to localStorage for admin
+    const inscriptions = JSON.parse(localStorage.getItem('edupro_inscriptions') || '[]');
+    inscriptions.push({
+      id: Date.now(),
+      nom: document.getElementById('nom').value,
+      prenom: document.getElementById('prenom').value,
+      email: email.value,
+      tel: document.getElementById('tel').value,
+      formation: document.getElementById('formation').options[document.getElementById('formation').selectedIndex].text,
+      date: new Date().toLocaleDateString('fr-FR'),
+      statut: 'En attente'
+    });
+    localStorage.setItem('edupro_inscriptions', JSON.stringify(inscriptions));
+    document.getElementById('success-overlay').classList.add('show');
+  }, 1500);
+});
+
+// Live validation on input
+document.querySelectorAll('input[required], select[required]').forEach(input => {
+  input.addEventListener('input', () => input.classList.remove('error'));
+});
+
+// Navbar
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(15,13,11,0.1)' : 'none';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro — Dashboard Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-logo">Edu<span>Pro</span></div>
+
+    <div class="sidebar-section">Navigation</div>
+    <button class="sidebar-link active" onclick="showSection('dashboard', this)">
+      <span class="icon">📊</span><span>Tableau de bord</span>
+    </button>
+    <button class="sidebar-link" onclick="showSection('formations', this)">
+      <span class="icon">📚</span><span>Formations</span>
+    </button>
+    <button class="sidebar-link" onclick="showSection('inscriptions', this)">
+      <span class="icon">👥</span><span>Inscriptions</span>
+    </button>
+
+    <div class="sidebar-section">Compte</div>
+    <button class="sidebar-link" onclick="showSection('profil', this)">
+      <span class="icon">👤</span><span>Profil</span>
+    </button>
+    <div class="sidebar-bottom">
+      <button class="sidebar-link" onclick="logout()" style="color:rgba(231,76,60,0.7)">
+        <span class="icon">🚪</span><span>Déconnexion</span>
+      </button>
+      <a href="index.html" class="sidebar-link" style="margin-top:0.3rem">
+        <span class="icon">🌐</span><span>Voir le site</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="admin-main">
+
+    <!-- ── DASHBOARD ── -->
+    <div class="admin-section active" id="section-dashboard">
+      <div class="admin-header">
+        <div>
+          <h1>Tableau de bord</h1>
+          <p>Bienvenue, Admin · <span id="current-date"></span></p>
+        </div>
+        <a href="inscription.html" class="btn-add" style="text-decoration:none">+ Nouvelle inscription</a>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card" style="--sc-color:#D9622B">
+          <div class="stat-card-icon">👥</div>
+          <div class="stat-card-num" id="stat-total">0</div>
+          <div class="stat-card-label">Total inscriptions</div>
+          <div class="stat-card-trend">↑ +12% ce mois</div>
+        </div>
+        <div class="stat-card" style="--sc-color:#27AE60">
+          <div class="stat-card-icon">✅</div>
+          <div class="stat-card-num" id="stat-confirmed">0</div>
+          <div class="stat-card-label">Confirmées</div>
+          <div class="stat-card-trend" style="color:#27AE60">↑ En hausse</div>
+        </div>
+        <div class="stat-card" style="--sc-color:#F39C12">
+          <div class="stat-card-icon">⏳</div>
+          <div class="stat-card-num" id="stat-pending">0</div>
+          <div class="stat-card-label">En attente</div>
+          <div class="stat-card-trend" style="color:#F39C12">À traiter</div>
+        </div>
+        <div class="stat-card" style="--sc-color:#3B5EA6">
+          <div class="stat-card-icon">📚</div>
+          <div class="stat-card-num">6</div>
+          <div class="stat-card-label">Formations actives</div>
+          <div class="stat-card-trend" style="color:#3B5EA6">Catalogue complet</div>
+        </div>
+      </div>
+
+      <!-- Recent inscriptions preview -->
+      <div class="admin-table-wrap">
+        <div class="table-head">
+          <h3>Inscriptions récentes</h3>
+          <button class="btn-add" onclick="showSection('inscriptions', document.querySelector('[onclick*=inscriptions]'))">Voir tout</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Étudiant</th>
+              <th>Formation</th>
+              <th>Date</th>
+              <th>Statut</th>
+            </tr>
+          </thead>
+          <tbody id="recent-tbody">
+            <tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:2rem">Aucune inscription pour le moment</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── FORMATIONS ── -->
+    <div class="admin-section" id="section-formations">
+      <div class="admin-header">
+        <div><h1>Formations</h1><p>Gérez votre catalogue de formations</p></div>
+        <button class="btn-add" onclick="openFormationModal()">+ Ajouter une formation</button>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead>
+            <tr><th>Titre</th><th>Catégorie</th><th>Niveau</th><th>Prix</th><th>Inscrits</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Intelligence Artificielle</strong></td>
+              <td><span class="badge badge-blue">IA & Data</span></td>
+              <td>Intermédiaire</td>
+              <td>299 DT</td>
+              <td>1 240</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(1)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Data Science avec Python</strong></td>
+              <td><span class="badge badge-green">Data Science</span></td>
+              <td>Débutant</td>
+              <td>249 DT</td>
+              <td>890</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(2)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Développement Web Full Stack</strong></td>
+              <td><span class="badge badge-orange">Développement</span></td>
+              <td>Débutant</td>
+              <td>199 DT</td>
+              <td>2 100</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(3)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Cybersécurité & Ethical Hacking</strong></td>
+              <td><span class="badge badge-red">Sécurité</span></td>
+              <td>Avancé</td>
+              <td>349 DT</td>
+              <td>640</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(4)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>DevOps & Cloud</strong></td>
+              <td><span class="badge badge-orange">DevOps</span></td>
+              <td>Intermédiaire</td>
+              <td>279 DT</td>
+              <td>510</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(5)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+            <tr>
+              <td><strong>Design UI/UX</strong></td>
+              <td><span class="badge badge-blue">Design</span></td>
+              <td>Débutant</td>
+              <td>179 DT</td>
+              <td>1 780</td>
+              <td><div class="action-btns"><button class="btn-edit" onclick="editFormation(6)">Modifier</button><button class="btn-delete" onclick="deleteRow(this)">Supprimer</button></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── INSCRIPTIONS ── -->
+    <div class="admin-section" id="section-inscriptions">
+      <div class="admin-header">
+        <div><h1>Inscriptions</h1><p>Gérez les demandes d'inscription</p></div>
+        <a href="inscription.html" class="btn-add" style="text-decoration:none">+ Nouvelle inscription</a>
+      </div>
+      <div class="admin-table-wrap">
+        <table>
+          <thead>
+            <tr><th>Nom</th><th>E-mail</th><th>Formation</th><th>Date</th><th>Statut</th><th>Actions</th></tr>
+          </thead>
+          <tbody id="inscriptions-tbody">
+            <tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:2rem">Aucune inscription pour le moment</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── PROFIL ── -->
+    <div class="admin-section" id="section-profil">
+      <div class="admin-header">
+        <div><h1>Mon Profil</h1><p>Paramètres du compte administrateur</p></div>
+      </div>
+      <div style="background:var(--white);border-radius:20px;border:1.5px solid var(--cream-2);padding:2rem;max-width:500px">
+        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem">
+          <div style="width:64px;height:64px;border-radius:50%;background:var(--orange);display:flex;align-items:center;justify-content:center;font-weight:700;color:white;font-size:1.3rem">A</div>
+          <div>
+            <div style="font-weight:700;color:var(--dark);font-size:1.1rem">Administrateur</div>
+            <div style="font-size:0.85rem;color:var(--text-muted)">admin@edupro.tn</div>
+          </div>
+        </div>
+        <div class="form-group"><label>Identifiant</label><input type="text" value="admin" readonly style="opacity:0.6"></div>
+        <div class="form-group"><label>E-mail</label><input type="email" value="admin@edupro.tn"></div>
+        <div class="form-group"><label>Nouveau mot de passe</label><input type="password" placeholder="Laisser vide pour ne pas changer"></div>
+        <button class="btn-submit" style="width:auto;padding:0.75rem 2rem">Sauvegarder les modifications</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- MODAL Formation -->
+<div class="modal-overlay" id="formation-modal">
+  <div class="modal">
+    <h3 id="modal-title">Ajouter une formation</h3>
+    <div class="form-group"><label>Titre</label><input type="text" id="f-titre" placeholder="Titre de la formation"></div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Catégorie</label>
+        <select id="f-cat">
+          <option>Développement Web</option>
+          <option>IA & Data</option>
+          <option>Data Science</option>
+          <option>Design UI/UX</option>
+          <option>Cybersécurité</option>
+          <option>DevOps & Cloud</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Niveau</label>
+        <select id="f-niveau">
+          <option>Débutant</option>
+          <option>Intermédiaire</option>
+          <option>Avancé</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>Prix (DT)</label><input type="number" id="f-prix" placeholder="299"></div>
+      <div class="form-group"><label>Durée</label><input type="text" id="f-duree" placeholder="40h"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">Annuler</button>
+      <button class="btn-add" onclick="saveFormation()">Sauvegarder</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Auth guard
+if (!sessionStorage.getItem('edupro_admin')) {
+  window.location.href = 'admin-login.html';
+}
+
+// Current date
+document.getElementById('current-date').textContent = new Date().toLocaleDateString('fr-FR', { weekday:'long', day:'numeric', month:'long', year:'numeric' });
+
+// Show/hide sections
+function showSection(name, btn) {
+  document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
+  document.getElementById('section-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
+  if (name === 'inscriptions' || name === 'dashboard') loadInscriptions();
+}
+
+// Load inscriptions from localStorage
+function loadInscriptions() {
+  const data = JSON.parse(localStorage.getItem('edupro_inscriptions') || '[]');
+
+  // Stats
+  document.getElementById('stat-total').textContent = data.length;
+  document.getElementById('stat-confirmed').textContent = data.filter(i => i.statut === 'Confirmée').length;
+  document.getElementById('stat-pending').textContent = data.filter(i => i.statut === 'En attente').length;
+
+  // Recent table (dashboard)
+  const recentTbody = document.getElementById('recent-tbody');
+  if (data.length === 0) {
+    recentTbody.innerHTML = '<tr><td colspan="4" style="text-align:center;color:var(--text-muted);padding:2rem">Aucune inscription pour le moment</td></tr>';
+  } else {
+    recentTbody.innerHTML = data.slice(-5).reverse().map(i => `
+      <tr>
+        <td><strong>${i.prenom} ${i.nom}</strong><div style="font-size:0.78rem;color:var(--text-muted)">${i.email}</div></td>
+        <td>${i.formation}</td>
+        <td>${i.date}</td>
+        <td><span class="badge ${i.statut === 'Confirmée' ? 'badge-green' : 'badge-orange'}">${i.statut}</span></td>
+      </tr>
+    `).join('');
+  }
+
+  // Full inscriptions table
+  const tbody = document.getElementById('inscriptions-tbody');
+  if (data.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:2rem">Aucune inscription pour le moment</td></tr>';
+  } else {
+    tbody.innerHTML = data.reverse().map((i, idx) => `
+      <tr id="ins-row-${idx}">
+        <td><strong>${i.prenom} ${i.nom}</strong></td>
+        <td>${i.email}</td>
+        <td>${i.formation}</td>
+        <td>${i.date}</td>
+        <td>
+          <select class="badge" style="border:none;background:none;font-size:0.78rem;font-weight:600;cursor:pointer;color:${i.statut === 'Confirmée' ? '#27AE60' : '#D9622B'}" onchange="updateStatut(${idx}, this)">
+            <option ${i.statut === 'En attente' ? 'selected' : ''}>En attente</option>
+            <option ${i.statut === 'Confirmée' ? 'selected' : ''}>Confirmée</option>
+            <option ${i.statut === 'Annulée' ? 'selected' : ''}>Annulée</option>
+          </select>
+        </td>
+        <td><div class="action-btns">
+          <button class="btn-delete" onclick="deleteInscription(${idx})">Supprimer</button>
+        </div></td>
+      </tr>
+    `).join('');
+  }
+}
+
+function updateStatut(idx, sel) {
+  const data = JSON.parse(localStorage.getItem('edupro_inscriptions') || '[]');
+  data[data.length - 1 - idx].statut = sel.value;
+  localStorage.setItem('edupro_inscriptions', JSON.stringify(data));
+  sel.style.color = sel.value === 'Confirmée' ? '#27AE60' : sel.value === 'Annulée' ? '#E74C3C' : '#D9622B';
+}
+
+function deleteInscription(idx) {
+  if (!confirm('Supprimer cette inscription ?')) return;
+  const data = JSON.parse(localStorage.getItem('edupro_inscriptions') || '[]');
+  data.splice(data.length - 1 - idx, 1);
+  localStorage.setItem('edupro_inscriptions', JSON.stringify(data));
+  loadInscriptions();
+}
+
+function deleteRow(btn) {
+  if (!confirm('Supprimer cette formation ?')) return;
+  btn.closest('tr').remove();
+}
+
+// Modal formation
+function openFormationModal(editId) {
+  document.getElementById('modal-title').textContent = editId ? 'Modifier la formation' : 'Ajouter une formation';
+  document.getElementById('formation-modal').classList.add('show');
+}
+function editFormation(id) { openFormationModal(id); }
+function closeModal() { document.getElementById('formation-modal').classList.remove('show'); }
+function saveFormation() { closeModal(); }
+
+function logout() {
+  sessionStorage.removeItem('edupro_admin');
+  window.location.href = 'admin-login.html';
+}
+
+// Initial load
+loadInscriptions();
+</script>
+</body>
+</html>

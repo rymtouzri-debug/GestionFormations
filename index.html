@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro — Plateforme de Formation</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Edu<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="#formations">Formations</a></li>
+    <li><a href="#categories">Catégories</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="admin-login.html">Admin</a></li>
+  </ul>
+  <a href="inscription.html" class="nav-cta">Commencer →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Plateforme N°1 en Tunisie</div>
+    <h1 class="hero-title">
+      Apprenez les<br>
+      compétences<br>
+      <em>de demain.</em>
+    </h1>
+    <p class="hero-sub">Des formations professionnelles conçues pour vous propulser dans votre carrière. Plus de 200 cours en ligne, à votre rythme.</p>
+    <div class="hero-actions">
+      <a href="#formations" class="btn-primary">Explorer les formations →</a>
+      <a href="#" class="btn-secondary">▶ Voir la démo</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">8 500+</span><span class="stat-label">Étudiants formés</span></div>
+      <div class="stat"><span class="stat-num">200+</span><span class="stat-label">Cours disponibles</span></div>
+      <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Note moyenne</span></div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="float-badge b1">
+      <span class="badge-icon">🏆</span>
+      <div><strong style="display:block;font-size:0.85rem">Certifié</strong><span style="color:var(--text-muted);font-weight:400;font-size:0.75rem">Certificat professionnel</span></div>
+    </div>
+    <div class="hero-card-main">
+      <span class="card-course-tag">Développement Web</span>
+      <div class="card-course-title">Maîtrisez le développement Full Stack moderne</div>
+      <div class="card-progress-label"><span>Progression</span><span>68%</span></div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <div class="card-bottom">
+        <div class="avatar-stack">
+          <div class="avatar" style="background:#D9622B">AM</div>
+          <div class="avatar" style="background:#3B5EA6">SB</div>
+          <div class="avatar" style="background:#27AE60">KL</div>
+          <div class="avatar" style="background:#8E44AD;font-size:0.6rem">+24</div>
+        </div>
+        <button class="card-enroll" onclick="window.location='inscription.html'">S'inscrire</button>
+      </div>
+    </div>
+    <div class="float-badge b2">
+      <span class="badge-icon">🎓</span>
+      <div><strong style="display:block;font-size:0.85rem">+1 200 inscrits</strong><span style="color:var(--text-muted);font-weight:400;font-size:0.75rem">ce mois-ci</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Développement Web <span>✦</span></span>
+    <span class="marquee-item">Data Science <span>✦</span></span>
+    <span class="marquee-item">Intelligence Artificielle <span>✦</span></span>
+    <span class="marquee-item">Cybersécurité <span>✦</span></span>
+    <span class="marquee-item">Design UI/UX <span>✦</span></span>
+    <span class="marquee-item">Marketing Digital <span>✦</span></span>
+    <span class="marquee-item">DevOps & Cloud <span>✦</span></span>
+    <span class="marquee-item">Développement Web <span>✦</span></span>
+    <span class="marquee-item">Data Science <span>✦</span></span>
+    <span class="marquee-item">Intelligence Artificielle <span>✦</span></span>
+    <span class="marquee-item">Cybersécurité <span>✦</span></span>
+    <span class="marquee-item">Design UI/UX <span>✦</span></span>
+    <span class="marquee-item">Marketing Digital <span>✦</span></span>
+    <span class="marquee-item">DevOps & Cloud <span>✦</span></span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories" id="categories">
+  <p class="section-label reveal">Domaines</p>
+  <h2 class="section-title reveal reveal-delay-1">Explorez nos <em>catégories</em></h2>
+  <div class="cat-grid">
+    <div class="cat-card reveal" style="--cat-color:#D9622B;--cat-rgb:217,98,43" onclick="filterByCategory('dev')">
+      <div class="cat-icon">💻</div>
+      <div class="cat-name">Développement Web</div>
+      <div class="cat-count">42 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-1" style="--cat-color:#3B5EA6;--cat-rgb:59,94,166" onclick="filterByCategory('ia')">
+      <div class="cat-icon">🤖</div>
+      <div class="cat-name">Intelligence Artificielle</div>
+      <div class="cat-count">28 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-2" style="--cat-color:#27AE60;--cat-rgb:39,174,96" onclick="filterByCategory('data')">
+      <div class="cat-icon">📊</div>
+      <div class="cat-name">Data Science</div>
+      <div class="cat-count">35 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-3" style="--cat-color:#8E44AD;--cat-rgb:142,68,173" onclick="filterByCategory('design')">
+      <div class="cat-icon">🎨</div>
+      <div class="cat-name">Design UI/UX</div>
+      <div class="cat-count">19 formations</div>
+    </div>
+    <div class="cat-card reveal" style="--cat-color:#E74C3C;--cat-rgb:231,76,60" onclick="filterByCategory('secu')">
+      <div class="cat-icon">🔐</div>
+      <div class="cat-name">Cybersécurité</div>
+      <div class="cat-count">24 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-1" style="--cat-color:#F39C12;--cat-rgb:243,156,18" onclick="filterByCategory('devops')">
+      <div class="cat-icon">☁️</div>
+      <div class="cat-name">DevOps & Cloud</div>
+      <div class="cat-count">31 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-2" style="--cat-color:#16A085;--cat-rgb:22,160,133" onclick="filterByCategory('mobile')">
+      <div class="cat-icon">📱</div>
+      <div class="cat-name">Mobile Dev</div>
+      <div class="cat-count">18 formations</div>
+    </div>
+    <div class="cat-card reveal reveal-delay-3" style="--cat-color:#D9622B;--cat-rgb:217,98,43" onclick="filterByCategory('marketing')">
+      <div class="cat-icon">📢</div>
+      <div class="cat-name">Marketing Digital</div>
+      <div class="cat-count">22 formations</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS -->
+<section class="formations" id="formations">
+  <div class="formations-header">
+    <div>
+      <p class="section-label">Catalogue</p>
+      <h2 class="section-title">Formations <em>populaires</em></h2>
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" onclick="filterLevel(this,'tous')">Tous</button>
+      <button class="filter-btn" onclick="filterLevel(this,'debutant')">Débutant</button>
+      <button class="filter-btn" onclick="filterLevel(this,'intermediaire')">Intermédiaire</button>
+      <button class="filter-btn" onclick="filterLevel(this,'avance')">Avancé</button>
+    </div>
+  </div>
+  <div class="formations-grid" id="formations-grid">
+    <div class="formation-card reveal" data-level="intermediaire" data-cat="ia">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1e3a5f,#0d1f36)">
+        <span class="thumb-emoji">🤖</span>
+        <span class="card-level level-intermediaire">Intermédiaire</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">IA & Data</div>
+        <div class="card-title">Intelligence Artificielle : machine learning & deep learning</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 40h</span>
+          <span class="meta-item">👤 1 240 inscrits</span>
+          <span class="meta-item">⭐ 4.9</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">299 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=1" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="formation-card reveal reveal-delay-1" data-level="debutant" data-cat="data">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1a3a2a,#0d2016)">
+        <span class="thumb-emoji">📊</span>
+        <span class="card-level level-debutant">Débutant</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Data Science</div>
+        <div class="card-title">Data Science avec Python : analysez et visualisez vos données</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 35h</span>
+          <span class="meta-item">👤 890 inscrits</span>
+          <span class="meta-item">⭐ 4.8</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">249 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=2" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="formation-card reveal reveal-delay-2" data-level="debutant" data-cat="dev">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#3a1f10,#1c0e05)">
+        <span class="thumb-emoji">💻</span>
+        <span class="card-level level-debutant">Débutant</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Développement</div>
+        <div class="card-title">Développement Web Full Stack : HTML, CSS, JS, PHP & MySQL</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 50h</span>
+          <span class="meta-item">👤 2 100 inscrits</span>
+          <span class="meta-item">⭐ 4.9</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">199 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=3" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="formation-card reveal" data-level="avance" data-cat="secu">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#2d1a3e,#180e22)">
+        <span class="thumb-emoji">🔐</span>
+        <span class="card-level level-avance">Avancé</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Sécurité</div>
+        <div class="card-title">Cybersécurité & Ethical Hacking : protégez vos systèmes</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 45h</span>
+          <span class="meta-item">👤 640 inscrits</span>
+          <span class="meta-item">⭐ 4.7</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">349 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=4" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="formation-card reveal reveal-delay-1" data-level="intermediaire" data-cat="devops">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#0e2a3a,#061520)">
+        <span class="thumb-emoji">☁️</span>
+        <span class="card-level level-intermediaire">Intermédiaire</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">DevOps</div>
+        <div class="card-title">DevOps & Cloud : Docker, Kubernetes, AWS de A à Z</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 38h</span>
+          <span class="meta-item">👤 510 inscrits</span>
+          <span class="meta-item">⭐ 4.8</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">279 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=5" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+    <div class="formation-card reveal reveal-delay-2" data-level="debutant" data-cat="design">
+      <div class="card-thumb" style="background:linear-gradient(135deg,#1a2e1a,#0e1c0e)">
+        <span class="thumb-emoji">🎨</span>
+        <span class="card-level level-debutant">Débutant</span>
+      </div>
+      <div class="card-body">
+        <div class="card-category">Design</div>
+        <div class="card-title">Design UI/UX : maîtrisez Figma et créez des interfaces modernes</div>
+        <div class="card-meta">
+          <span class="meta-item">⏱ 25h</span>
+          <span class="meta-item">👤 1 780 inscrits</span>
+          <span class="meta-item">⭐ 4.9</span>
+        </div>
+        <div class="card-footer">
+          <div class="card-price">179 DT <span>/formation</span></div>
+          <a href="formation-detail.html?id=6" class="btn-card">Voir →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="temoignages">
+  <p class="section-label reveal">Témoignages</p>
+  <h2 class="section-title reveal reveal-delay-1">Ce que disent nos <em>étudiants</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">« La formation Data Science était exactement ce dont j'avais besoin. Les exercices pratiques m'ont permis de décrocher mon premier poste d'analyste en 3 mois. »</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#D9622B">AS</div>
+        <div><div class="testi-name">Amira Sassi</div><div class="testi-role">Analyste Data, Tunis</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-1">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">« Excellente pédagogie ! Le cours Full Stack est très complet et bien structuré. J'ai pu créer mon portfolio professionnel dès la fin de la formation. »</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#3B5EA6">MK</div>
+        <div><div class="testi-name">Mohamed Karim</div><div class="testi-role">Développeur Web, Sfax</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal reveal-delay-2">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">« Le suivi personnalisé et la qualité des instructeurs sont remarquables. J'ai doublé mon salaire grâce à la certification obtenue via EduPro. »</p>
+      <div class="testi-author">
+        <div class="testi-avatar" style="background:#27AE60">LB</div>
+        <div><div class="testi-name">Leila Bouaziz</div><div class="testi-role">Ingénieure DevOps, Sousse</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner reveal">
+  <div class="cta-text">
+    <h2 class="cta-title">Prêt à transformer<br>votre <em>carrière ?</em></h2>
+    <p class="cta-sub">Rejoignez plus de 8 500 étudiants qui ont déjà fait confiance à EduPro pour développer leurs compétences.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="inscription.html" class="btn-cta-main">Créer un compte gratuit</a>
+    <a href="#formations" class="btn-cta-ghost">Voir les formations →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="color:var(--white)">Edu<span>Pro</span></a>
+      <p>La plateforme de formation professionnelle tunisienne qui vous prépare aux métiers du numérique.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formation-detail.html?id=3">Développement Web</a></li>
+        <li><a href="formation-detail.html?id=2">Data Science</a></li>
+        <li><a href="formation-detail.html?id=1">IA & Machine Learning</a></li>
+        <li><a href="formation-detail.html?id=4">Cybersécurité</a></li>
+        <li><a href="formation-detail.html?id=6">Design UI/UX</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Entreprise</h4>
+      <ul>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Nos instructeurs</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Carrières</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Aide</a></li>
+        <li><a href="#">Remboursement</a></li>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EduPro. Tous droits réservés.</span>
+    <div class="footer-socials">
+      <a href="#" class="social-link">𝕏</a>
+      <a href="#" class="social-link">in</a>
+      <a href="#" class="social-link">f</a>
+      <a href="#" class="social-link">▶</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Navbar shadow
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(15,13,11,0.1)' : 'none';
+  });
+
+  // Filter by level
+  function filterLevel(btn, level) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.formation-card').forEach(card => {
+      if (level === 'tous' || card.dataset.level === level) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+
+  // Filter by category (from category cards)
+  function filterByCategory(cat) {
+    document.getElementById('formations').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.filter-btn')[0].classList.add('active');
+      document.querySelectorAll('.formation-card').forEach(card => {
+        if (card.dataset.cat === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }, 600);
+  }
+</script>
+</body>
+</html>

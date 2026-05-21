@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduPro — Détail Formation</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Edu<span>Pro</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#formations">Formations</a></li>
+    <li><a href="index.html#categories">Catégories</a></li>
+    <li><a href="index.html#temoignages">Témoignages</a></li>
+    <li><a href="admin-login.html">Admin</a></li>
+  </ul>
+  <a href="inscription.html" class="nav-cta">S'inscrire →</a>
+</nav>
+
+<!-- DETAIL HERO -->
+<section class="detail-hero" id="detail-hero">
+  <div>
+    <a href="index.html" class="back-link">← Retour aux formations</a>
+    <span class="detail-badge" id="detail-cat">IA & Data</span>
+    <h1 class="detail-title" id="detail-title">Intelligence Artificielle : machine learning & deep learning</h1>
+    <p class="detail-desc" id="detail-desc">Maîtrisez les fondements et les techniques avancées de l'intelligence artificielle. De la régression linéaire aux réseaux de neurones profonds, ce cours vous prépare à résoudre des problèmes réels avec Python, scikit-learn et TensorFlow.</p>
+    <div class="detail-meta-row">
+      <div class="detail-meta">
+        <span class="detail-meta-label">Niveau</span>
+        <span class="detail-meta-val" id="detail-level">Intermédiaire</span>
+      </div>
+      <div class="detail-meta">
+        <span class="detail-meta-label">Durée</span>
+        <span class="detail-meta-val" id="detail-duree">40 heures</span>
+      </div>
+      <div class="detail-meta">
+        <span class="detail-meta-label">Étudiants</span>
+        <span class="detail-meta-val" id="detail-inscrits">1 240 inscrits</span>
+      </div>
+      <div class="detail-meta">
+        <span class="detail-meta-label">Note</span>
+        <span class="detail-meta-val" id="detail-note">⭐ 4.9 / 5</span>
+      </div>
+    </div>
+    <div class="instructor-row">
+      <div class="instructor-avatar" id="instr-avatar" style="background:#3B5EA6">SM</div>
+      <div>
+        <div class="instructor-name" id="instr-name">Dr. Sami Mejri</div>
+        <div class="instructor-title" id="instr-title">Data Scientist Senior · Ex-Google Brain</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky enroll card -->
+  <div class="enroll-card">
+    <div class="enroll-price" id="enroll-price">299 DT <span>/ formation</span></div>
+    <ul class="enroll-features">
+      <li>Accès illimité à vie</li>
+      <li>Certificat de réussite inclus</li>
+      <li>Support instructeur 7j/7</li>
+      <li>Projets pratiques corrigés</li>
+      <li>Accès aux mises à jour</li>
+    </ul>
+    <a href="inscription.html" class="btn-enroll-big" id="enroll-btn">S'inscrire maintenant →</a>
+    <p class="enroll-note">Remboursement garanti sous 14 jours</p>
+  </div>
+</section>
+
+<!-- PROGRAMME -->
+<section class="programme-section">
+  <p class="section-label">Contenu</p>
+  <h2 class="section-title">Programme <em>détaillé</em></h2>
+  <div class="accordion" id="programme-accordion"></div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner" style="margin-top:0">
+  <div class="cta-text">
+    <h2 class="cta-title">Prêt à commencer<br>cette <em>formation ?</em></h2>
+    <p class="cta-sub">Rejoignez des centaines d'étudiants qui ont déjà transformé leur carrière grâce à ce cours.</p>
+  </div>
+  <div class="cta-actions">
+    <a href="inscription.html" class="btn-cta-main">S'inscrire maintenant</a>
+    <a href="index.html#formations" class="btn-cta-ghost">Voir d'autres formations →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="color:var(--white)">Edu<span>Pro</span></a>
+      <p>La plateforme de formation professionnelle tunisienne qui vous prépare aux métiers du numérique.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Formations</h4>
+      <ul>
+        <li><a href="formation-detail.html?id=3">Développement Web</a></li>
+        <li><a href="formation-detail.html?id=2">Data Science</a></li>
+        <li><a href="formation-detail.html?id=1">IA & Machine Learning</a></li>
+        <li><a href="formation-detail.html?id=4">Cybersécurité</a></li>
+        <li><a href="formation-detail.html?id=6">Design UI/UX</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Aide</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="#">Conditions</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">Remboursement</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 EduPro. Tous droits réservés.</span>
+    <div class="footer-socials">
+      <a href="#" class="social-link">𝕏</a>
+      <a href="#" class="social-link">in</a>
+      <a href="#" class="social-link">f</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const FORMATIONS = {
+  1: {
+    cat: 'IA & Data', catColor: '#3B5EA6',
+    title: 'Intelligence Artificielle : machine learning & deep learning',
+    desc: 'Maîtrisez les fondements et les techniques avancées de l\'IA. De la régression linéaire aux réseaux de neurones profonds, ce cours vous prépare à résoudre des problèmes réels avec Python, scikit-learn et TensorFlow.',
+    level: 'Intermédiaire', duree: '40 heures', inscrits: '1 240 inscrits', note: '⭐ 4.9 / 5',
+    price: '299 DT', instrAvatar: '#3B5EA6', instrInitials: 'SM',
+    instrName: 'Dr. Sami Mejri', instrTitle: 'Data Scientist Senior · Ex-Google Brain',
+    programme: [
+      { titre: 'Module 1 — Introduction à l\'IA', lecons: ['Histoire et enjeux de l\'IA', 'Python pour la data science', 'NumPy et Pandas essentiels'] },
+      { titre: 'Module 2 — Machine Learning supervisé', lecons: ['Régression linéaire et logistique', 'Arbres de décision & Random Forest', 'SVM et KNN'] },
+      { titre: 'Module 3 — Deep Learning', lecons: ['Réseaux de neurones artificiels', 'CNN pour la vision par ordinateur', 'RNN et NLP'] },
+      { titre: 'Module 4 — Projet final', lecons: ['Collecte et nettoyage des données', 'Entraînement et évaluation du modèle', 'Déploiement de l\'application'] }
+    ]
+  },
+  2: {
+    cat: 'Data Science', catColor: '#27AE60',
+    title: 'Data Science avec Python : analysez et visualisez vos données',
+    desc: 'Apprenez à analyser, nettoyer et visualiser des données réelles avec Python. Maîtrisez Pandas, Matplotlib, Seaborn et construisez vos premiers tableaux de bord analytiques.',
+    level: 'Débutant', duree: '35 heures', inscrits: '890 inscrits', note: '⭐ 4.8 / 5',
+    price: '249 DT', instrAvatar: '#D9622B', instrInitials: 'NB',
+    instrName: 'Nour Ben Ali', instrTitle: 'Ingénieure Data · Doctorat INSAT',
+    programme: [
+      { titre: 'Module 1 — Python pour la Data', lecons: ['Installation et environnement', 'Pandas : DataFrames et séries', 'Nettoyage et prétraitement'] },
+      { titre: 'Module 2 — Visualisation', lecons: ['Matplotlib : graphiques fondamentaux', 'Seaborn : visualisations avancées', 'Tableaux de bord interactifs'] },
+      { titre: 'Module 3 — Statistiques', lecons: ['Statistiques descriptives', 'Tests d\'hypothèses', 'Corrélations et tendances'] },
+      { titre: 'Module 4 — Projet', lecons: ['Dataset réel : analyse complète', 'Rapport de data storytelling', 'Présentation des résultats'] }
+    ]
+  },
+  3: {
+    cat: 'Développement Web', catColor: '#D9622B',
+    title: 'Développement Web Full Stack : HTML, CSS, JS, PHP & MySQL',
+    desc: 'La formation la plus complète pour devenir développeur web Full Stack. Du HTML/CSS jusqu\'à PHP et MySQL, construisez des applications web dynamiques et professionnelles de A à Z.',
+    level: 'Débutant', duree: '50 heures', inscrits: '2 100 inscrits', note: '⭐ 4.9 / 5',
+    price: '199 DT', instrAvatar: '#D9622B', instrInitials: 'AH',
+    instrName: 'Ahmed Hamdi', instrTitle: 'Développeur Full Stack · 10 ans d\'expérience',
+    programme: [
+      { titre: 'Module 1 — HTML & CSS', lecons: ['Structure HTML5', 'CSS3 et Flexbox/Grid', 'Responsive design'] },
+      { titre: 'Module 2 — JavaScript', lecons: ['Bases du JavaScript', 'Manipulation du DOM', 'Fetch API & JSON'] },
+      { titre: 'Module 3 — PHP & MySQL', lecons: ['PHP orienté objet', 'PDO et sécurité SQL', 'Architecture MVC'] },
+      { titre: 'Module 4 — Projet final', lecons: ['Cahier des charges', 'Développement complet', 'Déploiement & mise en ligne'] }
+    ]
+  },
+  4: {
+    cat: 'Cybersécurité', catColor: '#E74C3C',
+    title: 'Cybersécurité & Ethical Hacking : protégez vos systèmes',
+    desc: 'Devenez expert en cybersécurité. Apprenez les techniques d\'attaque et de défense utilisées par les professionnels : pentesting, analyse forensique et protection des infrastructures.',
+    level: 'Avancé', duree: '45 heures', inscrits: '640 inscrits', note: '⭐ 4.7 / 5',
+    price: '349 DT', instrAvatar: '#E74C3C', instrInitials: 'KT',
+    instrName: 'Khalil Trabelsi', instrTitle: 'Pentester certifié OSCP · Ex-CERT Tunisie',
+    programme: [
+      { titre: 'Module 1 — Fondamentaux sécurité', lecons: ['Concepts réseau TCP/IP', 'Systèmes Linux pour la sécu', 'Environnement de test (VMs)'] },
+      { titre: 'Module 2 — Reconnaissance & Scan', lecons: ['OSINT et reconnaissance passive', 'Nmap et Nessus', 'Analyse des vulnérabilités'] },
+      { titre: 'Module 3 — Exploitation', lecons: ['Metasploit Framework', 'Injections SQL & XSS', 'Post-exploitation'] },
+      { titre: 'Module 4 — Défense & Rapport', lecons: ['Hardening des systèmes', 'Analyse des logs', 'Rédaction d\'un rapport pentest'] }
+    ]
+  },
+  5: {
+    cat: 'DevOps & Cloud', catColor: '#F39C12',
+    title: 'DevOps & Cloud : Docker, Kubernetes, AWS de A à Z',
+    desc: 'Maîtrisez les outils DevOps modernes et déployez vos applications dans le cloud. Docker, Kubernetes, CI/CD, AWS — tout ce qu\'il faut pour automatiser et scaler votre infrastructure.',
+    level: 'Intermédiaire', duree: '38 heures', inscrits: '510 inscrits', note: '⭐ 4.8 / 5',
+    price: '279 DT', instrAvatar: '#F39C12', instrInitials: 'RK',
+    instrName: 'Rami Karray', instrTitle: 'DevOps Engineer · AWS Certified',
+    programme: [
+      { titre: 'Module 1 — Docker', lecons: ['Conteneurs et images', 'Docker Compose', 'Registry et déploiement'] },
+      { titre: 'Module 2 — Kubernetes', lecons: ['Architecture K8s', 'Pods, Services, Ingress', 'Scaling automatique'] },
+      { titre: 'Module 3 — CI/CD', lecons: ['GitHub Actions', 'Pipeline automatisé', 'Tests et déploiement continu'] },
+      { titre: 'Module 4 — AWS', lecons: ['EC2, S3, RDS', 'Lambda & serverless', 'Monitoring & CloudWatch'] }
+    ]
+  },
+  6: {
+    cat: 'Design UI/UX', catColor: '#8E44AD',
+    title: 'Design UI/UX : maîtrisez Figma et créez des interfaces modernes',
+    desc: 'De zéro à designer professionnel. Apprenez les principes du design centré utilisateur, maîtrisez Figma, créez des prototypes interactifs et construisez votre portfolio.',
+    level: 'Débutant', duree: '25 heures', inscrits: '1 780 inscrits', note: '⭐ 4.9 / 5',
+    price: '179 DT', instrAvatar: '#8E44AD', instrInitials: 'IL',
+    instrName: 'Ines Louati', instrTitle: 'UX Lead Designer · Agence 221',
+    programme: [
+      { titre: 'Module 1 — Bases du design', lecons: ['Principes visuels fondamentaux', 'Typographie et couleurs', 'Grilles et espacement'] },
+      { titre: 'Module 2 — UX Research', lecons: ['Personas et user journeys', 'Tests utilisateurs', 'Wireframing basse fidélité'] },
+      { titre: 'Module 3 — Figma', lecons: ['Interface et outils Figma', 'Composants et auto-layout', 'Prototypes interactifs'] },
+      { titre: 'Module 4 — Portfolio', lecons: ['Case study complet', 'Présentation du projet', 'Publication du portfolio'] }
+    ]
+  }
+};
+
+// Load formation data
+const params = new URLSearchParams(window.location.search);
+const id = parseInt(params.get('id')) || 1;
+const f = FORMATIONS[id] || FORMATIONS[1];
+
+document.getElementById('detail-cat').textContent = f.cat;
+document.getElementById('detail-cat').style.background = `${f.catColor}22`;
+document.getElementById('detail-cat').style.color = f.catColor;
+document.getElementById('detail-title').textContent = f.title;
+document.getElementById('detail-desc').textContent = f.desc;
+document.getElementById('detail-level').textContent = f.level;
+document.getElementById('detail-duree').textContent = f.duree;
+document.getElementById('detail-inscrits').textContent = f.inscrits;
+document.getElementById('detail-note').textContent = f.note;
+document.getElementById('enroll-price').innerHTML = `${f.price} <span>/ formation</span>`;
+document.getElementById('instr-avatar').style.background = f.instrAvatar;
+document.getElementById('instr-avatar').textContent = f.instrInitials;
+document.getElementById('instr-name').textContent = f.instrName;
+document.getElementById('instr-title').textContent = f.instrTitle;
+document.getElementById('enroll-btn').href = `inscription.html?id=${id}`;
+document.title = `EduPro — ${f.title}`;
+
+// Build accordion
+const acc = document.getElementById('programme-accordion');
+f.programme.forEach((mod, i) => {
+  const item = document.createElement('div');
+  item.className = 'accordion-item';
+  item.innerHTML = `
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      <span>${mod.titre}</span>
+      <span class="acc-icon">+</span>
+    </div>
+    <div class="accordion-body">
+      <div class="accordion-body-inner">
+        <ul class="lesson-list">
+          ${mod.lecons.map(l => `<li>${l}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  `;
+  acc.appendChild(item);
+  if (i === 0) item.classList.add('open'); // open first by default
+});
+
+function toggleAcc(header) {
+  const item = header.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// Navbar
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(15,13,11,0.1)' : 'none';
+});
+</script>
+</body>
+</html>
